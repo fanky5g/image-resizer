@@ -59,7 +59,7 @@ function createApplicationAt(dir){
       'node': pkg.engines.node
     },
     dependencies: {
-      'image-resizer': '~' + pkg.version,
+      'image-resizer': 'https://github.com/fanky5g/image-resizer/tarball/4d3b003b211b75d106aa948642d938f75564ff3f',
       'express': pkg.dependencies.express,
       'lodash': pkg.dependencies.lodash,
       'chalk': pkg.dependencies.chalk,
