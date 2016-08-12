@@ -63,7 +63,7 @@ function createApplicationAt(dir){
       'express': pkg.dependencies.express,
       'lodash': pkg.dependencies.lodash,
       'chalk': pkg.dependencies.chalk,
-      'sharp': '0.15.1'
+      'sharp': pkg.dependencies.sharp
     },
     devDependencies: pkg.devDependencies
   };
