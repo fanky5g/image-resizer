@@ -9,11 +9,19 @@ util   = require('util');
 
 try {
   // create an AWS S3 client with the config data
-  client = new s3({
+  var s3Config = {
     accessKeyId: env.AWS_ACCESS_KEY_ID,
     secretAccessKey: env.AWS_SECRET_ACCESS_KEY,
     region: env.AWS_REGION
-  });
+  };
+  
+  if (env.AWS_ENDPOINT) {
+    s3Config = Object.assign(s3Config, {
+      endpoint: new AWS.Endpoint(env.AWS_ENDPOINT),
+    });
+  }
+  
+  client = new s3(s3Config);
   bucket = env.S3_BUCKET;
 } catch(e) {
 
